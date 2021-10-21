@@ -42,11 +42,12 @@ Merge BBQ into main and remove the branch (but keep the track that it was develo
 
     git merge --no-ff breakfast
 
-````
+```
 Auto-merging shopping-basket
 CONFLICT (content): Merge conflict in shopping-basket
 Automatic merge failed; fix conflicts and then commit the result.
 ```
+
 The conflict is marked in the shopping-basket file, which needs to be edited
 
     vi shopping-basket
