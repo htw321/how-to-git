@@ -24,14 +24,14 @@ Creates a new branch called BBQ and add some burgers to the shopping list
 
 Switch and create another branch to add Breakfast stuff to the basket
 
-    git checkout -b breakfast master
+    git checkout -b breakfast main
     echo "weetabix" >> shopping-basket
     git commit -a -m "Don't know who likes that stuff" 
 
 ### Merging and Deleting Branches
-Merge BBQ into master and remove the branch (but keep the track that it was developed in a branch)
+Merge BBQ into main and remove the branch (but keep the track that it was developed in a branch)
 
-    git checkout master
+    git checkout main
     git merge --no-ff BBQ
     git branch -d BBQ
 
@@ -58,26 +58,26 @@ The conflict is marked in the shopping-basket file, which needs to be edited
 ### Other merges
 Now we remember that we forgot to add veggie burgers to the BBQ, inserted before the burger.
 
-    git checkout -b BBQ master
+    git checkout -b BBQ main
     head -n 2 shopping-basket > tmp.txt; echo "veggie burgers" >> tmp.txt; tail -n 2 shopping-basket  >> tmp.txt
     cat tmp.txt > shopping-basket; rm tmp.txt
     git commit -a -m "An alternative food source"
 
 And Marmite for the breakfast basket
 
-    git checkout -b breakfast master
+    git checkout -b breakfast main
     echo "Marmite" >>  shopping-basket
     git commit -a -m "Some weird and wonderful stuff"
 
 Start the merging process - however you like it.
 breakfast <- BBQ
-master <- BBQ
-master <- breakfast
+main <- BBQ
+main <- breakfast
 
     git checkout breakfast
     git diff BBQ
     git merge --no-ff BBQ
-    git checkout master
+    git checkout main
     git merge --no-ff BBQ
     git merge --no-ff breakfast
 
