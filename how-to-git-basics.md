@@ -15,8 +15,8 @@ Create a new GIT repository
 ### git add
 Moves changes into a staging area. This allows you to prepare a set of changes you want to commit
 
-    touch README
-    git add README
+    touch README.md
+    git add README.md
 
 ### git commit
 
@@ -28,7 +28,7 @@ First commit is done, now let's change the file and look at the changes:
 ### git diff
 Show the changes to the files
 
-    echo "hello Cambridge" >> README
+    echo "hello Cambridge" >> README.md
     git diff 
 
 `git diff --staged` only compares the staged files
@@ -42,7 +42,7 @@ print the current file status and staged set
 
 To commit the changed file, you have to add it to the commit list
 
-    git add README
+    git add README.md
     git status
     git commit -m "I've added some text"
 
@@ -73,11 +73,11 @@ Remove the file from being tracked by git, but only removes the file from your c
 ### git reset
 Remove a file from the staging area
 
-    echo "Forgot to butter the bread" >> README
+    echo "Forgot to butter the bread" >> README.md
     echo "Put the jam on" >> my-breakfast.txt
-    git add README my-breakfast.txt
+    git add README.md my-breakfast.txt
     git status
-    git reset README
+    git reset README.md
     git status
     git commit -m "Only put the jam in"
 
